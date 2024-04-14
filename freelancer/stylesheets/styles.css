@@ -1,0 +1,267 @@
+:root {
+    --claro: #ffffff;
+    --oscuro: #212121;
+    --primario: #ffc107;
+    --secundario: #0097a7;
+    --gris: #757575;
+    --bg-gradient: #dfe9f3;
+}
+
+/* GLobales */
+html {
+    font-size: 62.5%;
+    /* px -> rem */
+    box-sizing: border-box;
+    /* Box-Model */
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    /* Box-Model */
+}
+
+body {
+    font-size: 16px;
+    /* px -> rem */
+    font-family: 'krub', sans-serif;
+    margin: 0;
+    background-image: linear-gradient(to top, var(--bg-gradient) 0%, var(--claro) 100%);
+}
+
+.container {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.btn {
+    background-color: var(--secundario);
+    color: var(--claro);
+    padding: 1rem 3rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    border: none;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+    .btn {
+        width: 70%;
+        text-align: center;
+    }
+
+}
+
+.shadow {
+    box-shadow: 0px 5px 15px 0px rgba(112, 112, 112, 0.49);
+    background-color: var(--claro);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+/* Tipografías */
+h1 {
+    font-size: 3.8rem;
+}
+
+h2 {
+    font-size: 2.8rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+h1,
+h2,
+h3 {
+    text-align: center;
+}
+
+.titulo {
+    text-align: center;
+}
+
+.titulo span {
+    font-size: 2rem;
+}
+
+/* Barra de Navegación */
+.nav-bg {
+    background-color: var(--secundario);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar a {
+    color: var(--claro);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1rem;
+}
+
+.navbar a:hover {
+    background-color: var(--primario);
+    color: var(--oscuro);
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Contenido */
+.hero {
+    background-image: url('../img/hero.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 45rem;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.content-hero {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Alinear Vertical y horizontal */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--claro);
+
+}
+
+.position {
+    display: flex;
+    align-items: flex-end;
+}
+
+
+/* Servicios */
+.services {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    .services {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+.service {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.service h3 {
+    color: var(--secundario);
+    font-weight: 500;
+}
+
+.service p {
+    line-height: 2;
+    text-align: center;
+}
+
+.service .icons {
+    height: 15rem;
+    width: 15rem;
+    background-color: var(--primario);
+    border-radius: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* Contacto */
+
+.formulario {
+    background-color: var(--gris);
+    width: min(60rem, 100%);
+    /* Utilizar el valor más pequeño*/
+    margin: 0 auto;
+    /* Cuando no tengamos un display flex en el padre */
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.formulario fieldset {
+    border: none;
+}
+
+.formulario legend {
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: var(--primario);
+}
+
+@media screen and (min-width: 770px) {
+    .container-camp {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto auto 25rem;
+        column-gap: 1rem;
+    }
+
+    .camp:nth-child(3), .camp:nth-child(4) {
+        grid-column: 1 / 3;
+    }
+
+}
+
+.camp {
+    margin-bottom: 1rem;
+}
+
+.camp label {
+    color: var(--claro);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.camp textarea {
+    height: 20rem;
+}
+
+.input-text {
+    width: 100%;
+    border: none;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+}
+
+.send .btn {
+    width: 100%;
+}
+
+/* Footer */
+
+.footer {
+    text-align: center;
+}
